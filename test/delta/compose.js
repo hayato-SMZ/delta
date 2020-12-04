@@ -11,8 +11,13 @@ describe('compose()', function() {
   it('insert + retain', function() {
     var a = new Delta().insert('A');
     var b = new Delta().retain(1, { bold: true, color: 'red', font: null });
+  
     var expected = new Delta().insert('A', { bold: true, color: 'red' });
     expect(a.compose(b)).toEqual(expected);
+  });
+
+  it('insert + insert + retain', function () {
+
   });
 
   it('insert + delete', function() {

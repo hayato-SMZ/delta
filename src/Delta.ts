@@ -85,7 +85,7 @@ class Delta {
       if (isEqual(newOp.attributes, lastOp.attributes)) {
         if (
           typeof newOp.insert === 'string' &&
-          typeof lastOp.insert === 'string'
+          typeof lastOp.insert === 'string' && !lastOp.insert.match(/\n/)
         ) {
           this.ops[index - 1] = { insert: lastOp.insert + newOp.insert };
           if (typeof newOp.attributes === 'object') {

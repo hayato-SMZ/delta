@@ -3,9 +3,9 @@ var Delta = require('../../dist/Delta');
 describe('helpers', function() {
   describe('concat()', function() {
     it('empty delta', function() {
-      var delta = new Delta().insert('Test');
-      var concat = new Delta();
-      var expected = new Delta().insert('Test');
+      var delta = new Delta().insert('Test\n');
+      var concat = new Delta().insert('center').insert('\n', { align: 'center' });
+      var expected = new Delta().insert('Test\n').insert('center').insert('\n', { align: 'center'});
       expect(delta.concat(concat)).toEqual(expected);
     });
 
