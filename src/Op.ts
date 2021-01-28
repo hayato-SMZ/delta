@@ -3,11 +3,16 @@ import Iterator from './Iterator';
 
 interface Op {
   // only one property out of {insert, delete, retain} will be present
-  insert?: string | object;
+  insert?: string | object | DefObject;
   delete?: number;
   retain?: number;
 
   attributes?: AttributeMap;
+}
+
+interface DefObject {
+  formula?: string;
+  image?: string;
 }
 
 namespace Op {
