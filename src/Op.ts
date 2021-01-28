@@ -10,7 +10,7 @@ interface Op {
   attributes?: AttributeMap;
 }
 
-interface DefObject {
+export interface DefObject {
   formula?: string;
   image?: string;
 }
